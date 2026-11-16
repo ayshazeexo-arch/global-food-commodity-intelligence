@@ -1,115 +1,359 @@
 # Global Food Commodity Market Intelligence
 
-An end-to-end data analytics portfolio project exploring four global agricultural commodity benchmarks using Python, MySQL, Microsoft Excel, Power BI, AI-assisted research, and baseline forecasting.
+**An End-to-End Data Analytics Portfolio Project**
 
-> **Project context:** CFCO (Consolidated Food Co) is an illustrative business case. This is a portfolio demonstration based on historical international benchmark prices; it is not a production system deployed within an actual company.
+A data analytics project exploring four major agricultural commodities using Python, MySQL, Microsoft Excel, Power BI, AI-assisted market research, and baseline forecasting.
 
-## Project at a glance
+The project demonstrates how historical commodity price data can be transformed into meaningful analytical findings, dashboards, forecasting scenarios, and procurement-oriented business insights.
 
-| Item | Description |
+> **Project context:** Consolidated Food Co (CFCO) is an illustrative business case used to frame this project. This is an independent portfolio demonstration based on historical international commodity benchmark prices. It is not a production system deployed within an actual company.
+
+---
+
+## 1. Project Overview
+
+| Category | Details |
 |---|---|
-| Domain | Agricultural commodities and supply-chain intelligence |
-| Commodities | Soybeans, Maize, Thai 5% Broken Rice, US Hard Red Winter (HRW) Wheat |
-| Data period | January 2021 – October 2026 |
-| Frequency | Monthly |
-| Unit | USD per metric tonne |
-| Historical observations | 70 per commodity; 280 commodity-month records |
-| Forecast horizon | November 2026 – April 2027 |
-| Tools | Python, Google Colab, MySQL, Excel, Power BI |
+| Project Domain | Agricultural Commodities and Supply Chain Intelligence |
+| Commodities Analysed | Soybeans, Maize, Thai 5% Broken Rice, US Hard Red Winter Wheat |
+| Data Source | World Bank Commodity Markets – Pink Sheet |
+| Data Period | January 2021 – October 2026 |
+| Data Frequency | Monthly |
+| Measurement Unit | USD per metric tonne |
+| Historical Observations | 70 observations per commodity |
+| Total Records | 280 commodity-month observations |
+| Forecast Scenario Period | November 2026 – April 2027 |
+| Primary Tools | Python, MySQL, Excel, Power BI |
 
-## Business problem
+## 2. Business Problem
 
-Food procurement and supply-chain teams need a structured way to monitor benchmark prices, compare commodity behaviour, understand historical volatility, and review potential price scenarios. This project turns historical commodity observations into a reproducible analytical workflow and management-oriented outputs.
+Food procurement and supply-chain teams need to monitor commodity price movements, understand historical market behaviour, identify volatility, and assess potential price scenarios.
 
-## Objectives
+This project addresses the analytical challenge by developing a structured workflow to:
 
-- Prepare and validate monthly benchmark price data for four commodities.
-- Analyse price trends, returns, annual averages, volatility, and historical relationships.
-- Store and query the prepared observations in a relational MySQL database.
-- Communicate findings through Excel and Power BI dashboards.
-- Compare baseline forecasting methods using documented validation procedures.
-- Translate quantitative findings into cautious, procurement-oriented observations.
+- Monitor historical commodity price movements.
+- Compare price trends across four agricultural commodities.
+- Measure historical price volatility and returns.
+- Identify relationships between commodity price movements.
+- Evaluate baseline forecasting methods.
+- Communicate analytical findings through interactive dashboards and management-oriented reports.
 
-## Workflow
+## 3. Project Objectives
 
-1. **Source and prepare data** – obtain the World Bank Commodity Markets (Pink Sheet) monthly price series; inspect, clean, validate, and reshape the selected observations using Python.
-2. **Analyse in Python** – calculate returns, annual averages, normalised comparisons, volatility, and correlations.
-3. **Store in MySQL** – maintain commodity reference data, historical facts, staging data, and an analytical view.
-4. **Report in Excel** – organise raw data, summary statistics, trends, volatility, comparisons, dashboard, and insights.
-5. **Visualise in Power BI** – provide data validation, executive overview, commodity risk analysis, and forecast views.
-6. **Research and forecast** – document AI-assisted market research with source checks and evaluate three baseline forecasting approaches.
-7. **Communicate business implications** – document findings, limitations, and suggested monitoring actions.
+1. Collect, clean, and validate historical commodity price data.
+2. Perform Exploratory Data Analysis (EDA) using Python.
+3. Calculate monthly returns, annual averages, volatility, and correlations.
+4. Design and implement a relational MySQL database.
+5. Develop Excel-based analytical reports and dashboards.
+6. Create interactive Power BI dashboards.
+7. Maintain AI-assisted commodity market research and risk assessments.
+8. Develop and evaluate baseline commodity price forecasting models.
+9. Translate analytical findings into procurement-oriented business recommendations.
 
-## Selected findings
+## 4. Analytical Workflow
 
-- Annualised historical volatility (monthly return standard deviation multiplied by √12): **Wheat 21.16%**, **Maize 20.68%**, **Thai 5% Broken Rice 19.64%**, and **Soybeans 17.65%**.
-- From January 2021 to October 2026, the endpoint price comparison was **Soybeans −10.59%**, **Maize −3.41%**, **Rice −10.28%**, and **Wheat +9.58%**.
-- In the documented three-month rolling-origin evaluation, the Naive method had the lowest average MAPE among the three tested methods: **5.73%**, compared with **7.76%** for Random Forest and **19.80%** for Seasonal Naive.
+The project follows an end-to-end data analytics process:
 
-These are historical, dataset-specific results. Correlation is not causation, and model performance in historical validation does not guarantee future accuracy.
+**Data Source → Data Cleaning → EDA → SQL Database → Excel Analysis → Power BI Dashboard → AI-Assisted Research → Forecasting → Business Insights**
 
-## Forecasting approach and caveats
+### Tools and technologies
 
-The project compares Naive, Seasonal Naive, and Random Forest methods. Rolling-origin validation used a 36-month initial training period, three-month evaluation windows, a three-month step, and 11 windows.
+| Technology | Application |
+|---|---|
+| Python | Data cleaning, transformation, statistical analysis, visualisation and forecasting |
+| Google Colab | Python notebook development and execution |
+| MySQL | Relational database design, data storage, validation and analytical queries |
+| Microsoft Excel | Statistical summaries, commodity comparisons and management dashboard |
+| Power BI | Interactive dashboards, data modelling, measures and visual reporting |
+| AI-Assisted Research | Commodity market research, risk identification and procurement-oriented analysis |
 
-The six-month point forecast holds the latest observed October 2026 price constant (Naive baseline). Bootstrap scenario ranges use 10,000 paths resampled from historical monthly returns (random seed 42). These ranges are illustrative simulation ranges, **not calibrated confidence intervals or guaranteed price boundaries**.
+## 5. Key Analytical Findings
 
-## Repository structure
+### Historical annualised volatility
 
-The project is organised into the following working folders:
+| Commodity | Annualised Volatility |
+|---|---:|
+| US HRW Wheat | 21.16% |
+| Maize | 20.68% |
+| Thai 5% Broken Rice | 19.64% |
+| Soybeans | 17.65% |
 
-```text
-01_RAW_DATA/
-02_PROCESSED_DATA/
+Wheat recorded the highest historical annualised volatility, while Soybeans recorded the lowest in the selected dataset.
+
+Volatility is calculated using the sample standard deviation of monthly returns multiplied by the square root of 12.
+
+### Endpoint price comparison
+
+Percentage change between January 2021 and October 2026:
+
+| Commodity | Price Change |
+|---|---:|
+| Soybeans | -10.59% |
+| Maize | -3.41% |
+| Thai Rice | -10.28% |
+| US HRW Wheat | +9.58% |
+
+These figures represent changes between two monthly benchmark observations, not company-specific procurement cost changes.
+
+### Forecasting model comparison
+
+Three baseline approaches were evaluated:
+
+- Naive Forecast
+- Seasonal Naive
+- Random Forest
+
+The documented three-month rolling-origin evaluation produced the following average MAPE:
+
+| Forecasting Model | Average MAPE |
+|---|---:|
+| Naive | 5.73% |
+| Random Forest | 7.76% |
+| Seasonal Naive | 19.80% |
+
+The Naive model achieved the lowest average MAPE among the three tested models in this evaluation.
+
+These results are specific to the historical validation design and do not guarantee future forecasting performance.
+
+## 6. Forecasting Methodology
+
+The forecasting analysis includes:
+
+- Initial 12-month holdout model comparison.
+- Rolling-origin model evaluation.
+- Naive, Seasonal Naive and Random Forest methods.
+
+Model performance comparison using MAPE.
+
+Six-month baseline price scenarios.
+
+Bootstrap simulation using 10,000 paths and random seed 42.
+
+The six-month point forecast holds the latest observed October 2026 price constant using a Naive baseline.
+
+The bootstrap simulation ranges are illustrative historical-return scenarios. They are not calibrated confidence intervals, guaranteed price boundaries, or predictions of actual market prices.
+
+7. Power BI Dashboard
+
+The Power BI project contains four analytical dashboard pages:
+
+Data Validation
+
+Executive Dashboard
+
+Commodity Risk Analysis
+
+Executive Forecast Dashboard
+
+The dashboard provides visual analysis of historical prices, commodity comparisons, volatility and forecasting scenarios.
+
+Dashboard file:
+Open Power BI Dashboard
+
+The file can be opened using Power BI Desktop.
+
+8. Excel Analysis
+
+The Excel analytical workbook contains the following worksheets:
+
+Raw_Data
+
+Commodity_Summary
+
+Monthly_Trends
+
+Annual_Analysis
+
+Volatility_Analysis
+
+Commodity_Comparison
+
+Management_Dashboard
+
+Insights
+
+Excel workbook:
+Open Excel Analysis
+
+9. AI-Assisted Commodity Market Research
+
+The project includes an AI-assisted commodity market research workbook covering:
+
+Soybeans
+
+Maize
+
+Thai 5% Broken Rice
+
+US HRW Wheat
+
+Commodity market developments
+
+Potential supply-chain risks
+
+Procurement strategy considerations
+
+Research source documentation
+
+Research workbook:
+Open Commodity Market Research Log
+
+AI-assisted research is used as supporting analysis. Important market claims should be independently checked against original, dated sources.
+
+10. Repository Structure
+
+The public GitHub repository is organised as follows:
+
+global-food-commodity-intelligence/
+│
+├── README.md
+├── .gitignore
+│
+├── 03_PYTHON_COLAB/
+│
+├── 04_MYSQL_DATABASE/
+│
+├── 05_EXCEL_ANALYSIS/
+│
+├── 06_POWER_BI/
+│
+├── 07_AI_RESEARCH/
+│
+├── 08_FORECASTING/
+│
+├── 09_REPORTS/
+│   ├── 01_Final_Project_Report.docx
+│   └── 01_Final_Project_Report.pdf
+│
+└── 10_DOCUMENTATION/
+    │
+    ├── 01_PROJECT_OVERVIEW/
+    ├── 02_DATA_DICTIONARY/
+    ├── 03_METHODOLOGY/
+    ├── 04_BUSINESS_INSIGHTS/
+    ├── 05_USER_GUIDE/
+    └── 06_INTERVIEW_PREPARATION/
+
+The original source workbook and separate raw and processed data folders are not currently included as top-level folders in this public repository.
+
+11. Important Project Deliverables
+
+Deliverable
+
+Location
+
+Python Analysis
+
 03_PYTHON_COLAB/
+
+MySQL Database Scripts
+
 04_MYSQL_DATABASE/
+
+Excel Analysis Workbook
+
 05_EXCEL_ANALYSIS/
+
+Power BI Dashboard
+
 06_POWER_BI/
+
+AI Research Workbook
+
 07_AI_RESEARCH/
+
+Forecasting Notebook and Results
+
 08_FORECASTING/
+
+Final Project Report
+
 09_REPORTS/
+
+Supporting Documentation
+
 10_DOCUMENTATION/
-```
 
-The repository will contain selected reproducible assets and documentation. Large binary files and source workbooks may be linked or documented rather than committed where size, licence, or usability makes that more appropriate.
+Final Project Report:
+View PDF Report
 
-## Tools and skills demonstrated
+Executive Summary:
+View Executive Summary
 
-- **Python:** data inspection, cleaning, transformation, statistical analysis, visualisation, forecasting evaluation.
-- **SQL / MySQL:** relational schema, staging and fact tables, dimension tables, validation queries, views, aggregation.
-- **Excel:** analytical worksheets, summaries, comparative analysis, management reporting.
-- **Power BI:** data modelling, date table, measures, interactive dashboards and slicers.
-- **Business analysis:** problem framing, insight interpretation, risk monitoring considerations, stakeholder documentation.
+12. Data Source and Attribution
 
-## Data source and attribution
+World Bank – Commodity Markets (Pink Sheet), Monthly Prices:
 
-World Bank, **Commodity Markets – Pink Sheet**, Monthly Prices:  
 https://www.worldbank.org/en/research/commodity-markets
 
-The analysis uses selected international benchmark series. These prices are not company purchase prices, supplier quotations, or landed procurement costs. Check the original source workbook and its applicable terms before redistributing source data.
+The project uses selected international commodity benchmark series.
 
-## Important limitations
+These benchmark prices are not company purchase prices, supplier quotations, or landed procurement costs. The original source data and its applicable terms should be checked before redistribution.
 
-- The dataset covers January 2021 through October 2026; 2026 is a partial year.
-- Each commodity has 70 monthly observations.
-- Benchmarks and grades may not match the products purchased by a particular business.
-- Freight, insurance, duties, local taxes, currency conversion, supplier premiums, and company-specific costs are not included.
-- Historical volatility and price correlations describe the selected sample; price-level correlations can reflect common trends.
-- AI-assisted market research is supporting analysis. Verify material factual claims against original, dated sources.
-- CFCO is illustrative; this project has not been deployed in a real company's procurement operations.
+13. Project Limitations
 
-## How to explore
+The dataset covers January 2021 to October 2026. Therefore, 2026 represents a partial year.
 
-1. Start with the project overview and final report in `10_DOCUMENTATION/`.
-2. Review the data dictionary and methodology to understand fields and calculations.
-3. Explore the Python notebook and SQL scripts for the analytical workflow.
-4. Open the Excel workbook for worksheet-level analysis.
-5. Open the Power BI `.pbix` file in Power BI Desktop to interact with the report.
-6. Review the forecasting notebook, model comparison, and rolling-origin results alongside the stated limitations.
+Each commodity contains 70 monthly observations.
 
-## Author
+International benchmark prices may differ from the actual product grades purchased by individual businesses.
 
-**Aysha Ziya Rasheed**  
-GitHub: [@ayshazeexo-arch](https://github.com/ayshazeexo-arch)
+Freight, insurance, import duties, taxes, currency conversion and supplier premiums are not included.
 
-*Portfolio project demonstrating competencies relevant to entry-level Data Analyst and Business Analyst roles.*
+Historical volatility and correlations describe the selected sample and do not establish future market behaviour.
+
+Historical model performance does not guarantee future forecast accuracy.
+
+AI-assisted market research requires independent source verification.
+
+CFCO is an illustrative business case; the project has not been deployed in a real company's procurement operations.
+
+14. Skills Demonstrated
+
+Technical Skills
+
+Python
+
+SQL and MySQL
+
+Microsoft Excel
+
+Power BI
+
+Exploratory Data Analysis
+
+Data Cleaning and Transformation
+
+Statistical Analysis
+
+Forecasting and Model Evaluation
+
+Data Visualisation
+
+Business and Analytical Skills
+
+Business Problem Understanding
+
+Data-Driven Decision Making
+
+Commodity Market Analysis
+
+Risk Assessment
+
+Business Insights Development
+
+Procurement-Oriented Recommendations
+
+Stakeholder Reporting
+
+Analytical Documentation
+
+15. Author
+
+Aysha Ziya Rasheed
+
+GitHub: @ayshazeexo-arch
+
+Portfolio Focus: Data Analyst | Business Analyst
+
+This project demonstrates practical analytical and business problem-solving skills through an independent end-to-end data analytics portfolio project.
