@@ -4,7 +4,7 @@
 
 A data analytics project exploring four major agricultural commodities using Python, MySQL, Microsoft Excel, Power BI, AI-assisted market research, and baseline forecasting.
 
-The project demonstrates how historical commodity price data can be transformed into meaningful analytical findings, dashboards, forecasting scenarios, and procurement-oriented business insights.
+The project demonstrates how historical commodity price data can be transformed into analytical findings, dashboards, forecasting scenarios, and procurement-oriented business insights.
 
 > **Project context:** Consolidated Food Co (CFCO) is an illustrative business case used to frame this project. This is an independent portfolio demonstration based on historical international commodity benchmark prices. It is not a production system deployed within an actual company.
 
@@ -36,7 +36,7 @@ This project addresses the analytical challenge by developing a structured workf
 - Measure historical price volatility and returns.
 - Identify relationships between commodity price movements.
 - Evaluate baseline forecasting methods.
-- Communicate analytical findings through interactive dashboards and management-oriented reports.
+- Communicate analytical findings through dashboards and management-oriented reports.
 
 ## 3. Project Objectives
 
@@ -52,24 +52,22 @@ This project addresses the analytical challenge by developing a structured workf
 
 ## 4. Analytical Workflow
 
-The project follows an end-to-end data analytics process:
-
 **Data Source → Data Cleaning → EDA → SQL Database → Excel Analysis → Power BI Dashboard → AI-Assisted Research → Forecasting → Business Insights**
 
-### Tools and technologies
+### Tools and Technologies
 
 | Technology | Application |
 |---|---|
-| Python | Data cleaning, transformation, statistical analysis, visualisation and forecasting |
+| Python | Data cleaning, transformation, statistical analysis, visualisation, and forecasting |
 | Google Colab | Python notebook development and execution |
-| MySQL | Relational database design, data storage, validation and analytical queries |
-| Microsoft Excel | Statistical summaries, commodity comparisons and management dashboard |
-| Power BI | Interactive dashboards, data modelling, measures and visual reporting |
-| AI-Assisted Research | Commodity market research, risk identification and procurement-oriented analysis |
+| MySQL | Relational database design, data storage, validation, and analytical queries |
+| Microsoft Excel | Statistical summaries, commodity comparisons, and management dashboard |
+| Power BI | Interactive dashboards, data modelling, measures, and visual reporting |
+| AI-Assisted Research | Commodity market research, risk identification, and procurement-oriented analysis |
 
 ## 5. Key Analytical Findings
 
-### Historical annualised volatility
+### Historical Annualised Volatility
 
 | Commodity | Annualised Volatility |
 |---|---:|
@@ -82,7 +80,7 @@ Wheat recorded the highest historical annualised volatility, while Soybeans reco
 
 Volatility is calculated using the sample standard deviation of monthly returns multiplied by the square root of 12.
 
-### Endpoint price comparison
+### Endpoint Price Comparison
 
 Percentage change between January 2021 and October 2026:
 
@@ -95,7 +93,7 @@ Percentage change between January 2021 and October 2026:
 
 These figures represent changes between two monthly benchmark observations, not company-specific procurement cost changes.
 
-### Forecasting model comparison
+### Forecasting Model Comparison
 
 Three baseline approaches were evaluated:
 
@@ -105,23 +103,35 @@ Three baseline approaches were evaluated:
 
 The documented three-month rolling-origin evaluation produced the following average MAPE:
 
-| Forecasting Model | Average MAPE |
-|---|---:|
-| Naive | 5.73% |
-| Random Forest | 7.76% |
-| Seasonal Naive | 19.80% |
+Forecasting Model
+
+Average MAPE
+
+Naive
+
+5.73%
+
+Random Forest
+
+7.76%
+
+Seasonal Naive
+
+19.80%
 
 The Naive model achieved the lowest average MAPE among the three tested models in this evaluation.
 
 These results are specific to the historical validation design and do not guarantee future forecasting performance.
 
-## 6. Forecasting Methodology
+6. Forecasting Methodology
 
 The forecasting analysis includes:
 
-- Initial 12-month holdout model comparison.
-- Rolling-origin model evaluation.
-- Naive, Seasonal Naive and Random Forest methods.
+Initial 12-month holdout model comparison.
+
+Rolling-origin model evaluation.
+
+Naive, Seasonal Naive, and Random Forest methods.
 
 Model performance comparison using MAPE.
 
@@ -145,12 +155,11 @@ Commodity Risk Analysis
 
 Executive Forecast Dashboard
 
-The dashboard provides visual analysis of historical prices, commodity comparisons, volatility and forecasting scenarios.
+The dashboard provides visual analysis of historical prices, commodity comparisons, volatility, and forecasting scenarios.
 
-Dashboard file:
-Open Power BI Dashboard
+Open the Power BI Dashboard (.pbix)
 
-The file can be opened using Power BI Desktop.
+Open the PBIX file using Power BI Desktop.
 
 8. Excel Analysis
 
@@ -172,8 +181,7 @@ Management_Dashboard
 
 Insights
 
-Excel workbook:
-Open Excel Analysis
+Open the Excel Analysis Workbook
 
 9. AI-Assisted Commodity Market Research
 
@@ -195,8 +203,7 @@ Procurement strategy considerations
 
 Research source documentation
 
-Research workbook:
-Open Commodity Market Research Log
+Open the Commodity Market Research Log
 
 AI-assisted research is used as supporting analysis. Important market claims should be independently checked against original, dated sources.
 
@@ -210,15 +217,10 @@ global-food-commodity-intelligence/
 ├── .gitignore
 │
 ├── 03_PYTHON_COLAB/
-│
 ├── 04_MYSQL_DATABASE/
-│
 ├── 05_EXCEL_ANALYSIS/
-│
 ├── 06_POWER_BI/
-│
 ├── 07_AI_RESEARCH/
-│
 ├── 08_FORECASTING/
 │
 ├── 09_REPORTS/
@@ -226,7 +228,6 @@ global-food-commodity-intelligence/
 │   └── 01_Final_Project_Report.pdf
 │
 └── 10_DOCUMENTATION/
-    │
     ├── 01_PROJECT_OVERVIEW/
     ├── 02_DATA_DICTIONARY/
     ├── 03_METHODOLOGY/
@@ -240,7 +241,7 @@ The original source workbook and separate raw and processed data folders are not
 
 Deliverable
 
-Location
+Repository Location
 
 Python Analysis
 
@@ -274,15 +275,21 @@ Supporting Documentation
 
 10_DOCUMENTATION/
 
-Final Project Report:
-View PDF Report
+Key Files
 
-Executive Summary:
-View Executive Summary
+Final Project Report – PDF
+
+Final Project Report – Word
+
+Executive Summary
+
+Forecasting Notebook
+
+Six-Month Commodity Forecasts
 
 12. Data Source and Attribution
 
-World Bank – Commodity Markets (Pink Sheet), Monthly Prices:
+World Bank – Commodity Markets (Pink Sheet), Monthly Prices
 
 https://www.worldbank.org/en/research/commodity-markets
 
@@ -298,7 +305,7 @@ Each commodity contains 70 monthly observations.
 
 International benchmark prices may differ from the actual product grades purchased by individual businesses.
 
-Freight, insurance, import duties, taxes, currency conversion and supplier premiums are not included.
+Freight, insurance, import duties, taxes, currency conversion, and supplier premiums are not included.
 
 Historical volatility and correlations describe the selected sample and do not establish future market behaviour.
 
